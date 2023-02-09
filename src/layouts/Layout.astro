@@ -32,15 +32,19 @@ const { title } = Astro.props;
 	@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;1,300;1,400&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+	body{
+		background: radial-gradient(103.31% 322.48% at -3.3% -3.31%, #A310A5 0%, #3631AC 40.22%, #291F71 69.36%, #200242 100%);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
 	:root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
 	}
 	html {
 		font-family: system-ui, sans-serif;
-		background: radial-gradient(103.31% 322.48% at -3.3% -3.31%, #A310A5 0%, #3631AC 40.22%, #291F71 69.36%, #200242 100%);
-		background-repeat: no-repeat;
-		background-size: cover;
+
 	}
 	code {
 		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
