@@ -1,0 +1,44 @@
+---
+export interface Props {
+	link: any;
+	body: string;
+	link2: any;
+	body2: string;
+	link3: any;
+	body3: string;
+	end: string;
+}
+
+const { link, body,link2,body2,link3,body3,end } = Astro.props;
+---
+
+<div class="font-['Source_Sans_3'] pt-4 text-xl text-white italic tracking-[0.07em]">
+	{body}<span class="link">{link}</span>{body2}<span class="link">{link2}</span>{body3}<span class="link">{link3}</span>{end}
+</div>
+
+<style>
+
+	.link {
+	@apply text-pink-400 cursor-pointer; 
+	display: inline-block;
+	position: relative;
+	}
+
+	.link::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	@apply bg-pink-400;
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-out;
+	}
+
+	.link:hover::after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+	}
+</style>

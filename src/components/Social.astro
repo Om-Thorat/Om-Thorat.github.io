@@ -1,0 +1,29 @@
+<div class="font-['Dongle'] mx-[3rem] gap-3 flex text-3xl text-[#91A4F8] w-[60%]">
+    <a class="link" href="https://twitter.com/ProbablyOm">Twitter</a><a class="link" href="https://www.instagram.com/obviouslynotom/">Insta</a><a class="link" href="https://discordapp.com/users/729969911933304852">Discord</a><a class="link" href="https://github.com/om-thorat">Github</a>
+</div>
+
+<style>
+.link {
+	@apply cursor-pointer; 
+	display: inline-block;
+	position: relative;
+	}
+
+	.link::after {
+	content: '';
+	position: absolute;
+	width: 100%;
+	transform: scaleX(0);
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	@apply bg-pink-400;
+	transform-origin: bottom right;
+	transition: transform 0.25s ease-out;
+	}
+
+	.link:hover::after {
+	transform: scaleX(1);
+	transform-origin: bottom left;
+	}
+</style>

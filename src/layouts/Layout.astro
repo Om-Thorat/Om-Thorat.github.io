@@ -1,0 +1,49 @@
+---
+export interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="referrer" content="none-when-downgrade">
+		<title>{title}</title>
+	</head>
+	<body class="w-screen h-screen flex flex-col items-center">
+		<img class="w-screen h-screen absolute mix-blend-overlay" src="/noise.png">
+		<div class="text-center w-[50%] justify-evenly flex py-3 font-['VT323'] text-[#91A4F8] text-2xl">
+			<a>//Home</a>
+			<a>//Projects</a>
+			<a>//Blog</a>
+		</div>
+		<slot />
+	</body>
+</html>
+<style is:global>
+	@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;1,300;1,400&display=swap');
+	@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+	:root {
+		--accent: 124, 58, 237;
+		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+	html {
+		font-family: system-ui, sans-serif;
+		background: radial-gradient(103.31% 322.48% at -3.3% -3.31%, #A310A5 0%, #3631AC 40.22%, #291F71 69.36%, #200242 100%);
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+	code {
+		font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
+			Bitstream Vera Sans Mono, Courier New, monospace;
+	}
+</style>

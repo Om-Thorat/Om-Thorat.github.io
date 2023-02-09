@@ -1,0 +1,104 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import Counter from '../components/Counter.svelte';
+import Salut from '../components/Salut.svelte';
+import Intro from '../components/Intro.svelte';
+import About from '../components/About.astro';
+import Social from '../components/Social.astro';
+import Song from '../components/Song.svelte';
+import Cred from '../components/Cred.astro';
+import Butterfly from '../components/butterfly.svelte';
+---
+
+<Layout title="Welcome to Astro.">
+	<Butterfly />
+	<main class="w-[80%] h-[80%] m-0 flex flex-row max-w-full">
+		<div class="flex flex-col w-full m-[3rem] mt-[4rem]">
+		<Salut client:visible />
+		<img src="/name.svg" alt="Om Thorat" class="w-2/3 object-contain pt-7">
+		<Intro client:visible />
+		<About
+		link= ""
+		body="In the end Just an average person stumbling through life. building Silly little websites 🎈"
+		link2 = ""
+		body2 = ""
+		link3 = ""
+		body3 = ""
+		end = ","
+		/>
+		<About
+		link= "all the bright places"
+		body="For side quests currently reading "
+		link2 = "Life is Strange"
+		body2=" and Sobbing through "
+		link3 = ""
+		body3 = ""
+		end = ","
+		/>
+		<About
+		link= "projects"
+		body="Feel free to snoop around checkout some "
+		body2 = " read my "
+		link2 = "blog"
+		body3 = " or send me an "
+		link3 = "Owl"
+		end = "!"
+		/>
+		</div>
+		<div class="w-3/4 z-10 flex items-center justify-center">
+			<Song client:visible />
+		</div>
+
+	</main>
+	<footer class="h-[20%] w-[80%] p-[1.5rem] flex items-center">
+		<Social />
+		<Cred />
+	</footer>
+</Layout>
+
+<style>
+
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+	.instructions code {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent), 12%);
+		color: rgb(var(--accent));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>
