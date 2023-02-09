@@ -11,6 +11,7 @@ import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://Om-Thorat.github.io',
   integrations: [svelte(), tailwind(), mdx()],
   "server":{
     headers: { "Access-Control-Allow-Origin": "*" }
