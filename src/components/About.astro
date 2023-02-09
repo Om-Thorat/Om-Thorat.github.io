@@ -1,19 +1,23 @@
 ---
+/* Yes this is the bad component yes i'll fix* it */
 export interface Props {
-	link: any;
+	link: string;
+	href: string;
 	body: string;
-	link2: any;
+	link2: string;
+	href2: string;
 	body2: string;
-	link3: any;
+	link3: string;
+	href3: string;
 	body3: string;
 	end: string;
 }
 
-const { link, body,link2,body2,link3,body3,end } = Astro.props;
+const { link, body,link2,body2,link3,body3,href,href2,href3,end } = Astro.props;
 ---
 
 <div class="font-['Source_Sans_3'] pt-4 text-xl text-white italic tracking-[0.07em]">
-	{body}<span class="link">{link}</span>{body2}<span class="link">{link2}</span>{body3}<span class="link">{link3}</span>{end}
+	{body}<a class="link" target="_blank" href={href ?? ""}>{link ?? ""}</a>{body2}<a target="_blank" class="link" href={href2 ?? ""}>{link2 ?? ""}</a>{body3}<a target="_blank" class="link" href={href3 ?? ""}>{link3 ?? ""}</a>{end}
 </div>
 
 <style>
@@ -42,3 +46,5 @@ const { link, body,link2,body2,link3,body3,end } = Astro.props;
 	transform-origin: bottom left;
 	}
 </style>
+
+ <!-- * Maybe -->

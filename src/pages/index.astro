@@ -11,13 +11,14 @@ import Cred from '../components/Cred.astro';
 import Butterfly from '../components/butterfly.svelte';
 ---
 
-<Layout title="Welcome to Astro.">
-	<Butterfly />
+<Layout title="Heyoo!">
+	<Butterfly client:visible />
 	<main class="w-[80%] h-[80%] m-0 flex flex-row max-w-full">
 		<div class="flex flex-col w-full m-[3rem] mt-[4rem]">
 		<Salut client:visible />
 		<img src="/name.svg" alt="Om Thorat" class="w-2/3 object-contain pt-7">
 		<Intro client:visible />
+		<!-- Yes this component isn't very good i'll fix it -->
 		<About
 		link= ""
 		body="In the end Just an average person stumbling through life. building Silly little websites 🎈"
@@ -25,24 +26,33 @@ import Butterfly from '../components/butterfly.svelte';
 		body2 = ""
 		link3 = ""
 		body3 = ""
+		href = ""
+		href2 = ""
+		href3 = ""
 		end = ","
 		/>
 		<About
 		link= "all the bright places"
+		href = "https://www.goodreads.com/en/book/show/18460392"
 		body="For side quests currently reading "
 		link2 = "Life is Strange"
+		href2 = "https://store.steampowered.com/app/319630/Life_is_Strange__Episode_1/"
 		body2=" and Sobbing through "
 		link3 = ""
 		body3 = ""
+		href3=""
 		end = ","
 		/>
 		<About
 		link= "projects"
+		href="/projects"
 		body="Feel free to snoop around checkout some "
 		body2 = " read my "
 		link2 = "blog"
+		href2 = "/blog"
 		body3 = " or send me an "
 		link3 = "Owl"
+		href3="mailto:thoratom1104@gmail.com"
 		end = "!"
 		/>
 		</div>
