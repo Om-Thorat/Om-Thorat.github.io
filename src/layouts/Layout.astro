@@ -16,12 +16,12 @@ const { title } = Astro.props;
 		<meta name="referrer" content="none-when-downgrade">
 		<title>{title}</title>
 	</head>
-	<body class="w-screen h-screen flex flex-col items-center max-w-[100%]">
+	<body class="w-screen h-screen flex flex-col items-center max-w-[100%] overflow-hidden">
 		<div class="w-screen h-screen absolute noise"></div>
 		<div class="text-center w-[50%] justify-evenly flex py-3 font-['VT323'] text-[#91A4F8] text-2xl">
-			<a>//Home</a>
-			<a>//Projects</a>
-			<a>//Blog</a>
+			<a href="/" class="z-30">//Home</a>
+			<a href="/projects" class="z-30">//Projects</a>
+			<a href="/blog" class="z-30">//Blog</a>
 		</div>
 		<slot />
 	</body>

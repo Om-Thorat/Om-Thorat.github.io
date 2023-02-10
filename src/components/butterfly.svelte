@@ -1,20 +1,20 @@
 <script lang="ts">
     import { onMount } from 'svelte'
     import {GetDistance,sleep} from "../scripts/fly"
-	let top = 0;
-    let right = 0;
+	let top = -4.5;
+    let right = -4.5;
     let turn = 2.4
     let sparkle:HTMLElement
     let anchor:Element
     let trail:Element
-    let x1 = 3
-    let y1 = 3
+    let x1 = -3
+    let y1 = -3
     let x2 = (95 - Math.floor(Math.random()*20))
     let y2 = (30 - Math.floor(Math.random()*25))
     let x3 = 3
     let y3 = (50 - ((-1)**(Math.floor(Math.random()*2)))*(Math.floor(Math.random()*20)))
-    let x4 = 90
-    let y4 = 90
+    let x4 = 100
+    let y4 = 100
     let start = false
     var t = 0.001
     const k = 0.0025
@@ -63,7 +63,7 @@
     onMount(waitabitbro)
 </script>
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="z-0 cursor-pointer flex absolute transition-all duration-[80ms] ease-linear w-[60px] h-[64px]" style="top: max({top}%,3%);right: max({right}%,3%);rotate:{turn}rad">
+<div class="z-0 cursor-pointer flex absolute transition-all duration-[80ms] ease-linear w-[60px] h-[64px]" style="top: max({top}%,-4.5%);right: max({right}%,-4.5%);rotate:{turn}rad">
 <div class="w-[10px] h-[60px] flex float-right">
 <svg width="10" height = "60" viewBox="0 0 10 60" class="dot transition-all duration-[80ms] ease-in absolute" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="5" cy="30" r="2.5" bind:this={anchor} fill="#fbcb59" id="anchor" style="visibility:hidden ;"></circle>
