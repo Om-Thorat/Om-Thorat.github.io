@@ -17,7 +17,7 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class="w-screen h-screen flex flex-col items-center max-w-[100%]">
-		<div class="w-screen h-screen absolute mix-blend-overlay bg-noise"></div>
+		<div class="w-screen h-screen absolute noise"></div>
 		<div class="text-center w-[50%] justify-evenly flex py-3 font-['VT323'] text-[#91A4F8] text-2xl">
 			<a>//Home</a>
 			<a>//Projects</a>
@@ -33,6 +33,13 @@ const { title } = Astro.props;
 	@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;1,300;1,400&display=swap');
 	@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 
+	.noise{
+		opacity: 35%;
+		background-blend-mode: overlay;
+		background-image: url('noisy.svg');
+		mix-blend-mode: overlay;
+		z-index: 0;
+	}
 	body{
 		background: radial-gradient(103.31% 322.48% at -3.3% -3.31%, #A310A5 0%, #3631AC 40.22%, #291F71 69.36%, #200242 100%);
 		background-repeat: no-repeat;
