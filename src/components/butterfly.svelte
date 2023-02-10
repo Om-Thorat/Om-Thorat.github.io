@@ -68,7 +68,7 @@
 <svg width="10" height = "60" viewBox="0 0 10 60" class="dot transition-all duration-[80ms] ease-in absolute" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="5" cy="30" r="2.5" bind:this={anchor} fill="#fbcb59" id="anchor" style="visibility:hidden ;"></circle>
 </svg>
-<img src="/sparklesirl.svg" bind:this={sparkle} alt="sparkles" width="10" height="10" class="dot transition-all ease-in 80ms fade absolute" style="visibility: hidden;">
+<img src="/sparklesirl.svg" bind:this={sparkle} alt="sparkles" width="10" height="10" class="dot transition-all ease-linear duration-[80ms] fade absolute" style="visibility: hidden;">
 </div>
 <img src="/Butterfly.gif" width="60px" height="64px" class="fly absolute transition-all duration-[80ms] ease-linear" alt="">
 </div>
