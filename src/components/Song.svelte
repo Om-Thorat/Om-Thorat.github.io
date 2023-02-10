@@ -17,12 +17,12 @@
     onMount (Gather)
 </script>
 
-<div class="bg rounded-2xl bg-no-repeat bg-contain backdrop:blur-[20px] flex items-center flex-col justify-center translate-y-10">
+<div class="bg rounded-2xl bg-no-repeat bg-contain backdrop:blur-[20px] flex items-center flex-col justify-center translate-y-0">
     <img src="noise2.svg" alt="" class="relative w-full h-full">
     <div class="absolute flex flex-col items-center">
         <span class="font-['Josefin_Sans'] text-[#F1A0CB] text-base tracking-wider pb-3 text-center">{Status}</span>
         <img src="{image}" width="162px" class="rounded-lg songimg" alt = "">
-        <span class="font-['Josefin_Sans'] text-[#FCF55C] text-xl tracking-wider pt-4 text-center">{Song}</span>
+        <span class="font-['Josefin_Sans'] text-[#FCF55C] text-xl tracking-wider pt-4 text-center leading-7 max-h-[4.5rem] overflow-hidden text-ellipsis max-w-[16ch] whitespace-nowrap">{Song}</span>
         <span class="font-['Josefin_Sans'] text-[#F1A0CB] text-lg tracking-wider text-center">{Artist}</span>
     </div>
 </div>
