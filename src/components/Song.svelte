@@ -17,7 +17,7 @@
     onMount (Gather)
 </script>
 
-<div class="bg rounded-2xl bg-no-repeat bg-contain backdrop:blur-[20px] flex items-center flex-col justify-center translate-y-0">
+<div class="bg rounded-2xl bg-no-repeat bg-contain flex items-center flex-col justify-center translate-y-0">
     <img src="noise2.svg" alt="" class="relative w-full h-full">
     <div class="absolute flex flex-col items-center">
         <span class="font-['Josefin_Sans'] text-[#F1A0CB] text-base tracking-wider pb-3 text-center">{Status}</span>
@@ -28,6 +28,7 @@
 </div>
 <style>
     .bg{
+        backdrop-filter: blur(5px);
         box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
         background-image: url('/Np.svg');
     }
