@@ -25,8 +25,8 @@
         }   
         start = true
         for (let i = 1;i<1000;i++){
-            let TotalX = window.innerHeight
-            let TotalY = window.innerHeight
+            let TotalX = window.innerHeight*(1.045)
+            let TotalY = window.innerHeight*(1.045)
             if ((t>1) || (t<0)){
                 t = 0.001
                 break
