@@ -43,9 +43,11 @@
             if ((trail.children.length <2) || (GetDistance(trail.children[trail.children.length-1],anchor) > 10 )){
                 var coord = anchor.getBoundingClientRect()
                 var newsparkle:HTMLElement = document.importNode(sparkle,true)
+                console.log(coord)
                 newsparkle.setAttribute("id",`${t}`)
-                newsparkle.style.position = "absolute"
+                newsparkle.style.position = "fixed"
                 newsparkle.style.visibility = "visible"
+                newsparkle.style.transition = "none"
                 newsparkle.style.top = `${(coord.top)}px`
                 newsparkle.style.left = `${(coord.left)}px`
                 trail.append(newsparkle)
@@ -63,16 +65,16 @@
     onMount(waitabitbro)
 </script>
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="z-0 cursor-pointer flex absolute transition-all duration-[80ms] ease-linear w-[60px] h-[64px]" style="top: max({top}%,-4.5%);right: max({right}%,-4.5%);rotate:{turn}rad">
+<div class="z-0 cursor-pointer flex fixed transition-all duration-[80ms] ease-linear w-[60px] h-[64px]" style="top: max({top}%,-4.5%);right: max({right}%,-4.5%);rotate:{turn}rad">
 <div class="w-[10px] h-[60px] flex float-right">
-<svg width="10" height = "60" viewBox="0 0 10 60" class="dot transition-all duration-[80ms] ease-in absolute" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="5" cy="30" r="2.5" bind:this={anchor} fill="#fbcb59" id="anchor" style="visibility:hidden ;"></circle>
+<svg width="10" height = "60" viewBox="0 0 10 60" class="dot transition-all duration-[80ms] ease-in fixed" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="5" cy="29" r="2.5" bind:this={anchor} fill="#fbcb59" id="anchor" class="fixed transition-all duration-[80ms]" style="visibility: hidden ;"></circle>
 </svg>
-<img src="/sparklesirl.svg" bind:this={sparkle} alt="sparkles" width="10" height="10" class="dot transition-all ease-linear duration-[80ms] fade absolute" style="visibility: hidden;">
+<img src="/sparklesirl.svg" bind:this={sparkle} alt="sparkles" width="10" height="10" class="dot transition-all ease-linear duration-[80ms] fade fixed" style="visibility: hidden;">
 </div>
-<img src="/Butterfly.gif" width="60px" height="64px" class="fly absolute transition-all duration-[80ms] ease-linear" alt="">
+<img src="/Butterfly.gif" width="60px" height="64px" class="fly fixed transition-all duration-[80ms] ease-linear" alt="">
 </div>
-<div bind:this={trail} class="contents absolute">
+<div bind:this={trail}>
 
 </div>
 <style>
