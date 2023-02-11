@@ -7,7 +7,7 @@ import Cred from '../components/Cred.astro';
 ---
 
 <Layout title="Projects">
-    <main class="flex w-full h-[80%] overflow-hidden flex-row justify-center items-center gap-4">
+    <main class="flex w-full h-[90%] md:h-[80%] overflow-auto flex-row justify-center items-center gap-4">
         <SlideScroll client:visible>
         <div class="min-w-[23%] h-full"></div>
         <ShowCard  title="ColorMash 🎨" href="ColorMash.deta.dev" body="Remember Facemash?\nfrom The Social Network.That’s it just for Color Combos\nUsing and elo rating ♟️ system to rank as voted by users." github="https://github.com/Om-Thorat/ColorMashDeta"/>
@@ -19,7 +19,7 @@ import Cred from '../components/Cred.astro';
         <div class="min-w-[23%] h-full"></div>
         </SlideScroll>
     </main>
-	<footer class="h-fit w-[80%] px-[1.5rem] flex items-center">
+	<footer class="h-fit w-full md:w-[80%] md:px-[1.5rem] flex items-center flex-col md:flex-row">
 		<Social />
 		<Cred />
 	</footer>

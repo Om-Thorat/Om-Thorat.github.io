@@ -24,9 +24,9 @@
             o = -o 
         }   
         start = true
-        let TotalX = window.innerHeight
-        let TotalY = window.innerHeight
         for (let i = 1;i<1000;i++){
+            let TotalX = window.innerHeight
+            let TotalY = window.innerHeight
             if ((t>1) || (t<0)){
                 t = 0.001
                 break
@@ -65,7 +65,7 @@
     onMount(waitabitbro)
 </script>
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="z-0 cursor-pointer flex fixed transition-all duration-[80ms] ease-linear w-[60px] h-[64px]" style="top: max({top}%,-4.5%);right: max({right}%,-4.5%);rotate:{turn}rad">
+<div class="z-0 scale-75 md:scale-100 flex fixed transition-all duration-[80ms] ease-linear w-[60px] h-[64px]" style="top: max({top}%,-4.5%);right: max({right}%,-4.5%);rotate:{turn}rad">
 <div class="w-[10px] h-[60px] flex float-right">
 <svg width="10" height = "60" viewBox="0 0 10 60" class="dot transition-all duration-[80ms] ease-in fixed" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="5" cy="29" r="2.5" bind:this={anchor} fill="#fbcb59" id="anchor" class="fixed transition-all duration-[80ms]" style="visibility: hidden ;"></circle>

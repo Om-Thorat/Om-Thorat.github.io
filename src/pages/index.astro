@@ -13,10 +13,10 @@ import Butterfly from '../components/butterfly.svelte';
 
 <Layout title="Heyoo!">
 	<Butterfly client:visible />
-	<main class="w-[80%] h-[80%] m-0 flex flex-row max-w-full">
-		<div class="flex flex-col w-full m-[3rem] mt-[4rem]">
+	<main class="w-[80%] h-[85%] md:h-[80%] m-0 flex flex-col md:flex-row max-w-full">
+		<div class="flex flex-col justify-center w-full md:m-[3rem] md:mt-[3rem] mt-[4rem]">
 		<Salut client:visible />
-		<img src="/name.svg" alt="Om Thorat" class="w-2/3 object-contain pt-7">
+		<img src="/name.svg" alt="Om Thorat" class="w-full md:w-2/3 object-contain pt-7">
 		<Intro client:visible />
 		<!-- Yes this component isn't very good i'll fix it -->
 		<About
@@ -56,12 +56,12 @@ import Butterfly from '../components/butterfly.svelte';
 		end = "!"
 		/>
 		</div>
-		<div class="w-1/2 z-10 flex items-center justify-center">
+		<div class="py-12 md:w-1/2 md:h-auto z-10 flex items-center justify-center">
 			<Song client:visible />
 		</div>
 
 	</main>
-	<footer class="h-fit w-[80%] px-[1.5rem] flex items-center">
+	<footer class="h-fit w-full md:w-[80%] md:px-[1.5rem] flex items-center flex-col md:flex-row">
 		<Social />
 		<Cred />
 	</footer>
