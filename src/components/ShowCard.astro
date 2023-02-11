@@ -9,7 +9,7 @@ export interface Props {
 const { href, title, body, github } = Astro.props;
 ---
 
-<div class="flex min-h-fit min-w-fit shrink-0 bg bg-contain bg-no-repeat bg-center transition-all duration-75 ease-linear justify-center items-center" style="">
+<div class="flex min-h-fit min-w-fit shrink-0 snap-center bg bg-contain bg-no-repeat bg-center transition-all duration-75 ease-linear justify-center items-center" style="">
     <div class="flex w-full items-center flex-col mx-6 fix gap-[7%] justify-center">
     <div class="flex w-[80%] justify-start font-['Josefin_sans'] text-3xl text-[#FCF55C]"><h1>{title}</h1></div>
     <div class="flex w-[80%] justify-end font-['Josefin_sans'] text-[#8DC8FF] text-lg"><a target="_blank" href={`https://${href}`}>{href}</a></div>

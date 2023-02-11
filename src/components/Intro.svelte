@@ -24,7 +24,7 @@
     onMount (change)
 </script>
 
-<div class="text-3xl font-semibold font-['Roboto'] tracking-[.12em] pt-10 text-white ">
+<div class="text-3xl font-semibold font-['Roboto'] tracking-[0.09em] md:tracking-[.12em] pt-10 text-white ">
     I am <span class="text-[#EC62BA]" id="adj">{adj}</span><span class="bar text-4xl">|</span>
 </div>
 
