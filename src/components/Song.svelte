@@ -23,7 +23,7 @@
     <div class="absolute flex items-center w-[85%] md:w-auto md:flex-col md:absolute md:justify-center">
         <span class="woops w-1/2 font-['Josefin_Sans'] text-[#F1A0CB] text-base tracking-wider md:pb-3 text-center md:w-full">{Status}</span>
         <img src="{image}" class=" min-w-[77px] w-[20%] -translate-x-[10%] md:translate-x-0 md:w-[16vw] max-w-[162px] rounded-xl md:rounded-lg songimg" alt = "">
-        <div class="flex flex-col items-start pl-4 md:items-center">
+        <div class="flex flex-col items-start md:items-center">
         <span class="oops hidden font-['Josefin_Sans'] text-[#CCFFFF] text-base tracking-wider md:pb-3 text-center">{Status}</span>
         <span class="font-['Josefin_Sans'] text-[#FCF55C] text-xl tracking-wider md:pt-4 text-center leading-7 max-h-[4.5rem] overflow-hidden text-ellipsis max-w-[16ch] whitespace-nowrap">{Song}</span>
         <span class="font-['Josefin_Sans'] text-[#F1A0CB] text-lg tracking-wider text-center">{Artist}</span>
