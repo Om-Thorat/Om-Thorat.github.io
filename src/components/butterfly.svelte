@@ -1,8 +1,8 @@
 <script lang="ts">
     import { onMount } from 'svelte'
     import {GetDistance,sleep} from "../scripts/fly"
-	let top = -4.5;
-    let right = -4.5;
+	let top = -3;
+    let right = -3;
     let turn = 2.4
     let sparkle:HTMLElement
     let anchor:Element
@@ -25,8 +25,8 @@
         }   
         start = true
         for (let i = 1;i<1000;i++){
-            let TotalX = window.innerHeight*(1.045)
-            let TotalY = window.innerHeight*(1.045)
+            let TotalX = window.innerHeight*(1.03)
+            let TotalY = window.innerHeight*(1.03)
             if ((t>1) || (t<0)){
                 t = 0.001
                 break
@@ -65,7 +65,7 @@
     onMount(waitabitbro)
 </script>
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="z-0 scale-75 md:scale-100 flex fixed transition-all duration-[80ms] ease-linear w-[60px] h-[64px]" style="top: max({top}%,-4.5%);right: max({right}%,-4.5%);rotate:{turn}rad">
+<div class="z-0 scale-75 md:scale-100 flex fixed transition-all duration-[80ms] ease-linear w-[60px] h-[64px]" style="top: max({top}%,-3%);right: max({right}%,-3%);rotate:{turn}rad">
 <div class="w-[10px] h-[60px] flex float-right">
 <svg width="10" height = "60" viewBox="0 0 10 60" class="dot transition-all duration-[80ms] ease-in fixed" fill="none" xmlns="http://www.w3.org/2000/svg">
 <circle cx="5" cy="29" r="2.5" bind:this={anchor} fill="#fbcb59" id="anchor" class="fixed transition-all duration-[80ms]" style="visibility: hidden ;"></circle>

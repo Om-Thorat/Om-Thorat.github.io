@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+---
+
+<Layout title="Blog">
+    <main class="w-full h-full flex-col overflow-auto coolscroll pointer-events-auto items-center justify-start flex text-white">
+        <div class="min-w-full h-1/4 min-h-[5%] hidden md:block"></div>
+            <ul class="flex sm:w-1/2 items-center translate-x-[1.2%] flex-col gap-3">
+                {
+                    posts.map((post) => (
+                        <li class="flex text-center h-fit gap-7 justify-center items-center">
+                            <div class="flex flex-col text-center gap-0 translate-y-3">
+                            <span class="font-['Dongle']" style="line-height: 1;font-size: 4rem;">{post.data.pubDate.toLocaleString('default',{ day: '2-digit'})} </span>
+                            <span class="font-['Dongle'] text-3xl -translate-y-4" style="line-height: 1;">{post.data.pubDate.toLocaleString('default',{ month: 'long'})} </span>
+                            </div>
+                            <a class="z-10 flex relative min-w-[20ch] text-start max-w-[20ch] text-ellipsis whitespace-nowrap font-['Dongle'] translate-x-[5%]" style="color:#FF69B4;font-size: 4rem;" href={`/blog/${post.slug}/`}><span class="w-full overflow-hidden text-ellipsis">{post.data.title}</span></a>
+                        </li>
+                    ))
+                }
+            </ul>
+    </main>
+</Layout>
