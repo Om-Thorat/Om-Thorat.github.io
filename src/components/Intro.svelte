@@ -4,6 +4,7 @@
     let traits:Array<string> = ["Curious. ","a little bit lazy. ","also completely crazy. "]
     function sleep(ms:number) {return new Promise(resolve => setTimeout(resolve, ms));}
     async function change(){
+        document.getElementsByTagName("main")[0].style.opacity = "1"
         let i = 1
         while(true){
             for (let x = adj.length;x>0;x--){

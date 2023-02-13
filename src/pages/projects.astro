@@ -4,10 +4,13 @@ import ShowCard from '../components/ShowCard.astro';
 import SlideScroll from '../components/SlideScroll.svelte';
 import Social from '../components/Social.astro';
 import Cred from '../components/Cred.astro';
+import Nav from '../components/Nav.svelte';
+import Comein from '../components/comein.svelte';
 ---
 
 <Layout title="Projects">
-    <main class="flex w-full h-[80%] md:h-[80%] flex-row justify-center items-center gap-4">
+    <Nav client:visible />
+    <main class="flex w-full h-[80%] fadein opacity-0 md:h-[80%] flex-row justify-center items-center gap-4 transition-opacity duration-700 ease-out">
         <SlideScroll client:visible>
         <div class="min-w-[23%] h-full"></div>
         <ShowCard  title="ColorMash 🎨" href="ColorMash.deta.dev" body="Remember Facemash?\nfrom The Social Network.That’s it just for Color Combos\nUsing and elo rating ♟️ system to rank as voted by users." github="https://github.com/Om-Thorat/ColorMashDeta"/>
@@ -19,8 +22,18 @@ import Cred from '../components/Cred.astro';
         <div class="min-w-[23%] h-full"></div>
         </SlideScroll>
     </main>
-	<footer class="h-fit w-full md:w-[80%] md:px-[1.5rem] flex items-center flex-col md:flex-row">
+	<footer class="h-fit w-full pt-2 md:pt-0 md:w-[80%] md:px-[1.5rem] flex items-center flex-col md:flex-row">
 		<Social />
 		<Cred />
 	</footer>
 </Layout>
+
+<style>
+    /* @keyframes fadein{
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+    .fadein{
+        animation: fadein 700ms 500ms forwards ease-out;
+    } */
+</style>

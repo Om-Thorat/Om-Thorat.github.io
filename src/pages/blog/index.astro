@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import Nav from '../../components/Nav.svelte';
 
 const posts = (await getCollection('blog')).sort(
 	(a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
@@ -8,7 +9,8 @@ const posts = (await getCollection('blog')).sort(
 ---
 
 <Layout title="Blog">
-    <main class="w-full h-full flex-col overflow-auto coolscroll pointer-events-auto items-center justify-start flex text-white">
+    <Nav client:visible />
+    <main class="w-full h-full fadein flex-col opacity-0  overflow-auto coolscroll pointer-events-auto items-center justify-start flex text-white">
         <div class="min-w-full h-1/4 min-h-[5%] hidden md:block"></div>
             <ul class="flex sm:w-1/2 items-center translate-x-[1.2%] flex-col gap-3">
                 {
@@ -25,3 +27,13 @@ const posts = (await getCollection('blog')).sort(
             </ul>
     </main>
 </Layout>
+
+<style>
+    @keyframes fadein{
+        from{opacity: 0;}
+        to{opacity: 1;}
+    }
+    .fadein{
+        animation: fadein 700ms 500ms forwards ease-out;
+    }
+</style>

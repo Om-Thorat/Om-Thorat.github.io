@@ -9,11 +9,13 @@ import Social from '../components/Social.astro';
 import Song from '../components/Song.svelte';
 import Cred from '../components/Cred.astro';
 import Butterfly from '../components/butterfly.svelte';
+import Nav from '../components/Nav.svelte';
 ---
 
 <Layout title="Heyoo!">
+	<Nav client:visible />
 	<Butterfly client:visible />
-	<main class="w-[80%] h-[80%%] md:h-[80%] m-0 flex flex-col md:flex-row max-w-full">
+	<main class="w-[80%] h-[80%%] md:h-[80%] opacity-0 fadein m-0 flex flex-col md:flex-row max-w-full transition-opacity duration-700 ease-out">
 		<div class="flex flex-col justify-center w-full md:m-[3rem] md:mt-[3rem] mt-[2rem]">
 		<Salut client:visible />
 		<img src="/name.svg" alt="Om Thorat" class="w-full md:w-2/3 object-contain pt-7">
@@ -68,7 +70,6 @@ import Butterfly from '../components/butterfly.svelte';
 </Layout>
 
 <style>
-
 	main {
 		margin: auto;
 		padding: 1.5rem;

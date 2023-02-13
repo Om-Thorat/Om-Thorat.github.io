@@ -7,6 +7,7 @@ async function move(){
     if (window.innerWidth  < 768){
         return
     }
+    document.getElementsByTagName("main")[0].style.opacity = "1"
     ScrollContainer.addEventListener("wheel", (evt:any) => {
     evt.preventDefault();
     ScrollContainer.scrollLeft += evt.deltaY*0.5;
