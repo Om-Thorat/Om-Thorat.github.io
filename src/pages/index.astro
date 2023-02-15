@@ -1,7 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
-import Counter from '../components/Counter.svelte';
 import Salut from '../components/Salut.svelte';
 import Intro from '../components/Intro.svelte';
 import About from '../components/About.astro';
@@ -12,7 +10,7 @@ import Butterfly from '../components/butterfly.svelte';
 import Nav from '../components/Nav.svelte';
 ---
 
-<Layout title="Heyoo!">
+<Layout title="Om's Cloud" desc="Hey! I am Om,Welcome to My Cloud on the internet.">
 	<Nav client:visible />
 	<Butterfly client:visible />
 	<main class="w-[80%] h-[80%%] md:h-[80%] opacity-0 fadein m-0 flex flex-col md:flex-row max-w-full transition-opacity duration-700 ease-out">
@@ -28,9 +26,9 @@ import Nav from '../components/Nav.svelte';
 		body2 = ""
 		link3 = ""
 		body3 = ""
-		href = ""
-		href2 = ""
-		href3 = ""
+		href = "/"
+		href2 = "/"
+		href3 = "/"
 		end = ","
 		/>
 		<About
@@ -42,7 +40,7 @@ import Nav from '../components/Nav.svelte';
 		body2=" and Sobbing through "
 		link3 = ""
 		body3 = ""
-		href3=""
+		href3="/"
 		end = ","
 		/>
 		<About

@@ -10,10 +10,15 @@ import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
 
 // https://astro.build/config
+import image from "@astrojs/image";
+
+// https://astro.build/config
 export default defineConfig({
   site: 'https://Om-Thorat.github.io',
-  integrations: [svelte(), tailwind(), mdx()],
-  "server":{
-    headers: { "Access-Control-Allow-Origin": "*" }
+  integrations: [svelte(), tailwind(), mdx(), image()],
+  "server": {
+    headers: {
+      "Access-Control-Allow-Origin": "*"
+    }
   }
 });
