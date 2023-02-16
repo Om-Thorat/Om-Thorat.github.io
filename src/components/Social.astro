@@ -1,15 +1,15 @@
 <div class="font-['Dongle'] w-full justify-center md:justify-start md:mx-[3rem] md:w-[66%] gap-3 flex text-4xl md:text-3xl text-[#91A4F8] ">
-    <a class="link" href="https://twitter.com/ProbablyOm">Twitter</a><a class="link" href="https://www.instagram.com/obviouslynotom/">Insta</a><a class="link" href="https://discordapp.com/users/729969911933304852">Discord</a><a class="link" href="https://github.com/om-thorat">Github</a>
+    <a class="hlink" href="https://twitter.com/ProbablyOm">Twitter</a><a class="hlink" href="https://www.instagram.com/obviouslynotom/">Insta</a><a class="hlink" href="https://discordapp.com/users/729969911933304852">Discord</a><a class="hlink" href="https://github.com/om-thorat">Github</a>
 </div>
 
 <style>
-.link {
+.hlink {
 	@apply cursor-pointer; 
 	display: inline-block;
 	position: relative;
 	}
 
-	.link::after {
+	.hlink::after {
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -22,7 +22,7 @@
 	transition: transform 0.25s ease-out;
 	}
 
-	.link:hover::after {
+	.hlink:hover::after {
 	transform: scaleX(1);
 	transform-origin: bottom left;
 	}

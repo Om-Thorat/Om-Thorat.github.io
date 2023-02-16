@@ -20,7 +20,7 @@ const posts = (await getCollection('blog')).sort(
                             <span class="font-['Dongle']" style="line-height: 1;font-size: 4rem;">{post.data.pubDate.toLocaleString('default',{ day: '2-digit'})} </span>
                             <span class="font-['Dongle'] text-3xl -translate-y-4" style="line-height: 1;">{post.data.pubDate.toLocaleString('default',{ month: 'long'})} </span>
                             </div>
-                            <a class="z-10 flex relative min-w-[20ch] text-start max-w-[20ch] text-ellipsis whitespace-nowrap font-['Dongle'] translate-x-[5%]" style="color:#FF69B4;font-size: 4rem;" href={`/blog/${post.slug}/`}><span class="w-full overflow-hidden text-ellipsis">{post.data.title}</span></a>
+                            <a class="z-10 flex relative min-w-[20ch] text-start max-w-[70vw] text-ellipsis whitespace-nowrap font-['Dongle'] translate-x-[5%]" style="color:#FF69B4;font-size: 4rem;" href={`/blog/${post.slug}/`}><span class="w-full overflow-hidden text-ellipsis">{post.data.title}</span></a>
                         </li>
                     ))
                 }

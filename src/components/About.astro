@@ -17,18 +17,18 @@ const { link, body,link2,body2,link3,body3,href,href2,href3,end } = Astro.props;
 ---
 
 <div class="font-['Source_Sans_3'] pt-12 md:pt-4 text-[1.7rem] md:text-xl text-white italic tracking-[0.07em] md:max-w-[60ch]">
-	{body}<a class="link" target="_blank" href={href ?? ""}>{link ?? ""}</a>{body2}<a target="_blank" class="link" href={href2 ?? ""}>{link2 ?? ""}</a>{body3}<a target="_blank" class="link" href={href3 ?? ""}>{link3 ?? ""}</a>{end}
+	{body}<a class="hlink" target="_blank" href={href ?? ""}>{link ?? ""}</a>{body2}<a target="_blank" class="hlink" href={href2 ?? ""}>{link2 ?? ""}</a>{body3}<a target="_blank" class="hlink" href={href3 ?? ""}>{link3 ?? ""}</a>{end}
 </div>
 
 <style>
 
-	.link {
+	.hlink {
 	@apply text-pink-400 cursor-pointer; 
 	display: inline-block;
 	position: relative;
 	}
 
-	.link::after {
+	.hlink::after {
 	content: '';
 	position: absolute;
 	width: 100%;
@@ -41,7 +41,7 @@ const { link, body,link2,body2,link3,body3,href,href2,href3,end } = Astro.props;
 	transition: transform 0.25s ease-out;
 	}
 
-	.link:hover::after {
+	.hlink:hover::after {
 	transform: scaleX(1);
 	transform-origin: bottom left;
 	}

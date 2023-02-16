@@ -13,10 +13,10 @@ import Nav from '../components/Nav.svelte';
 <Layout title="Om's Cloud" desc="Hey! I am Om,Welcome to My Cloud on the internet.">
 	<Nav client:visible />
 	<Butterfly client:visible />
-	<main class="w-[80%] h-[80%%] md:h-[80%] opacity-0 fadein m-0 flex flex-col md:flex-row max-w-full transition-opacity duration-700 ease-out">
+	<main class="w-[80%] h-[80%%] md:h-[80%] landscape:h-[80%] opacity-0 fadein m-0 flex flex-col md:flex-row landscape:flex-row max-w-full transition-opacity duration-700 ease-out">
 		<div class="flex flex-col justify-center w-full md:m-[3rem] md:mt-[3rem] mt-[2rem]">
 		<Salut client:visible />
-		<img src="/name.svg" alt="Om Thorat" class="w-full md:w-2/3 object-contain pt-7">
+		<img src="/name.svg" alt="Om Thorat" class="w-full landscape:w-2/3 md:w-2/3 object-contain pt-7">
 		<Intro client:visible />
 		<!-- Yes this component isn't very good i'll fix it -->
 		<About
@@ -56,12 +56,12 @@ import Nav from '../components/Nav.svelte';
 		end = "!"
 		/>
 		</div>
-		<div class="py-8 md:w-1/2 md:h-auto z-10 flex items-center justify-center">
+		<div class="py-8 md:w-1/2 landscape:w-1/2 landscape:h-auto md:h-auto z-10 flex items-center justify-center">
 			<Song client:visible />
 		</div>
 
 	</main>
-	<footer class="h-fit w-full pt-2 md:pt-0 md:w-[80%] md:px-[1.5rem] flex items-center flex-col md:flex-row">
+	<footer class="h-fit w-full pt-2 md:pt-0 md:w-[80%] md:px-[1.5rem] flex items-center flex-col md:flex-row landscape:flex-row">
 		<Social />
 		<Cred />
 	</footer>
