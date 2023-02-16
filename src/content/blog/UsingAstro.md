@@ -1,5 +1,5 @@
 ---
-title: "Building With Astro 🚀 "
+title: "Building With Astro"
 description: "Building With Astro and some other frustations"
 pubDate: "Feb 12 2023"
 ---
