@@ -18,8 +18,8 @@ const { title,desc } = Astro.props;
 		<meta property="og:image" content="/name.svg" />
 		<title>{title}</title>
 	</head>
-	<body class="w-screen h-screen flex flex-col items-center max-w-[100%] overflow-hidden">
-		<div class="w-screen h-screen absolute noise"></div>
+	<body class="w-screen h-[100svh] flex flex-col items-center max-w-[100%] overflow-hidden">
+		<div class="w-screen h-[100svh] absolute noise"></div>
 		<slot />
 	</body>
 </html>
