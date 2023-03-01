@@ -19,8 +19,7 @@ const { Content } = await post.render();
 <BlogPost {...post.data}>
 	<div class="flex flex-col justify-center"><span class="font-['Dongle'] text-4xl">{post.data.pubDate.toLocaleString('default',{ day: '2-digit',month: 'long'})} </span><h1 class="z-10 text-white text-center">{post.data.title}</h1><div class="h-9 z-0 -translate-y-9 bg-rose-400"></div></div>
 	<Content />
-    <footer class="h- w-full gap-2 md:w-[80%] md:px-[1.5rem] flex items-center flex-col md:flex-row">
+    <footer class="h-16 md:translate-x-[-3rem] flex items-center flex-col md:flex-row">
         <Social />
-        <Cred />
     </footer>
 </BlogPost>
