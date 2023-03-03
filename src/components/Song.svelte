@@ -8,6 +8,7 @@
     let loading:HTMLElement;
     function sleep(ms:number) {return new Promise(resolve => setTimeout(resolve, ms));}
 	async function Gather(){
+        const uff = await fetch('https://notom.vercel.app/track?n=home&p=visit')
 		const response = await fetch('https://notom.vercel.app/spotifyinfo')
         const list = await response.json()
         Song = list[1]
