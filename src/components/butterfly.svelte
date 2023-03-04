@@ -43,7 +43,6 @@
             if ((trail.children.length <2) || (GetDistance(trail.children[trail.children.length-1],anchor) > 10 )){
                 var coord = anchor.getBoundingClientRect()
                 var newsparkle:HTMLElement = document.importNode(sparkle,true)
-                console.log(coord)
                 newsparkle.setAttribute("id",`${t}`)
                 newsparkle.style.position = "fixed"
                 newsparkle.style.visibility = "visible"

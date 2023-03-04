@@ -2,7 +2,7 @@
 import { CollectionEntry, getCollection } from 'astro:content';
 import BlogPost from '../../layouts/Blogpost.astro';
 import Social from '../../components/Social.astro';
-import Cred from '../../components/Cred.astro';
+import Track from '../../components/Track.svelte';
 export async function getStaticPaths() {
 	const posts = await getCollection('blog');
 	return posts.map((post) => ({
@@ -22,4 +22,5 @@ const { Content } = await post.render();
     <footer class="h-16 md:translate-x-[-3rem] flex items-center flex-col md:flex-row">
         <Social />
     </footer>
+	<Track client:only />
 </BlogPost>

@@ -5,7 +5,7 @@ import SlideScroll from '../components/SlideScroll.svelte';
 import Social from '../components/Social.astro';
 import Cred from '../components/Cred.astro';
 import Nav from '../components/Nav.svelte';
-import Comein from '../components/comein.svelte';
+import Track from '../components/Track.svelte';
 ---
 
 <Layout title="Projects" desc="These are some projects i made over the years">
@@ -26,6 +26,7 @@ import Comein from '../components/comein.svelte';
 		<Social />
 		<Cred />
 	</footer>
+    <Track client:only />
 </Layout>
 
 <style>

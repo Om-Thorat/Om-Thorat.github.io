@@ -8,6 +8,7 @@ import Song from '../components/Song.svelte';
 import Cred from '../components/Cred.astro';
 import Butterfly from '../components/butterfly.svelte';
 import Nav from '../components/Nav.svelte';
+import Track from '../components/Track.svelte';
 ---
 
 <Layout title="Om's Cloud" desc="Hey! I am Om,Welcome to My Cloud on the internet.">
@@ -65,6 +66,7 @@ import Nav from '../components/Nav.svelte';
 		<Social />
 		<Cred />
 	</footer>
+	<Track client:only />
 </Layout>
 
 <style>
