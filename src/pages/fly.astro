@@ -1,10 +1,10 @@
 ---
 import Fly from "../layouts/fly.astro";
-import Butterfly from "../components/butterfly.svelte";
 import Track from "../components/Track.svelte";
+import Butterfly from "../components/Butterfly.svelte";
 ---
 
 <Fly>
-    <Butterfly client:visible />
+    <Butterfly client:only />
     <Track client:only />
 </Fly>

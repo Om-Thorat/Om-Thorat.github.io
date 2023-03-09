@@ -6,14 +6,23 @@ import About from '../components/About.astro';
 import Social from '../components/Social.astro';
 import Song from '../components/Song.svelte';
 import Cred from '../components/Cred.astro';
-import Butterfly from '../components/butterfly.svelte';
 import Nav from '../components/Nav.svelte';
 import Track from '../components/Track.svelte';
+import Butterfly from '../components/Butterfly.svelte';
+import Notif from '../components/Notif.astro';
+import NotifWrap from '../components/NotifWrap.svelte';
 ---
-
 <Layout title="Om's Cloud" desc="Hey! I am Om,Welcome to My Cloud on the internet.">
+	<Butterfly client:only />
 	<Nav client:visible />
-	<Butterfly client:visible />
+	<NotifWrap client:only
+	href="https://om-thorat.github.io/blog/lis/">
+	<Notif
+	title="Heyo!"
+	body="I am still hung up on life is strange."
+	img = "/iconlis.png"
+	/>
+	</NotifWrap>
 	<main class="w-[80%] md:h-[80%] landscape:h-[80%] opacity-0 fadein m-0 flex flex-col md:flex-row landscape:flex-row max-w-full transition-opacity duration-700 ease-out">
 		<div class="flex flex-col justify-center w-full md:m-[3rem] md:mt-[3rem] mt-[2rem]">
 		<Salut client:visible />

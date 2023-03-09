@@ -1,0 +1,35 @@
+---
+export interface Props {
+    img:string;
+    title:string;
+    body:string;
+}
+
+const { img,title,body,href } = Astro.props;
+---
+
+<div class="w-[15vw] h-[10vh] max-w-[250px] min-w-[150px] max-h-[80px] min-h-[45px] rounded-lg backdrop-blur-lg outline outline-2 outline-[#F1A0CB] right-5 top-5 absolute overflow-hidden drop cursor-pointer transition-all duration-300 hover:shadow-none">
+<div class="noise h-full w-full absolute"></div>
+<div class="flex mx-[2%] my-[1%] items-center h-[90%] w-full gap-3">
+    <img src={img} class="w-[25%] ml-2 aspect-square rounded-md oof object-cover" />
+    <div class="text-base leading-5 w-[25%] aspect-square flex flex-col justify-center items-start font-['Josefin_Sans'] text-[#EC62BA] ">
+        {title}
+    <div class="text-[0.7rem] text-[#fcf45ce0] leading-[0.8rem] w-[220%]">{body}</div>
+    </div>
+</div>
+</div>
+
+<style>
+    .noise{
+        background: url('/noise2.svg');
+        background-blend-mode: overlay;
+        mix-blend-mode: overlay;
+        backdrop-filter: blur(5px);
+    }
+    .oof{
+        box-shadow: 0px 4px 24px -1px rgba(0, 0, 0, 0.25);
+    }
+    .drop{
+        box-shadow: 0px 0px 24px 2px rgba(253, 114, 202, 0.572);
+    }
+</style>
