@@ -15,15 +15,15 @@ import NotifWrap from '../components/NotifWrap.svelte';
 <Layout title="Om's Cloud" desc="Hey! I am Om,Welcome to My Cloud on the internet.">
 	<Butterfly client:only />
 	<Nav client:visible />
-	<NotifWrap client:only
-	href="https://om-thorat.github.io/blog/lis/">
-	<Notif
-	title="Heyo!"
-	body="I am still hung up on life is strange."
-	img = "/iconlis.png"
-	/>
-	</NotifWrap>
 	<main class="w-[80%] md:h-[80%] landscape:h-[80%] opacity-0 fadein m-0 flex flex-col md:flex-row landscape:flex-row max-w-full transition-opacity duration-700 ease-out">
+		<NotifWrap client:only
+		href="https://om-thorat.github.io/blog/lis/">
+		<Notif
+		title="Heyo!"
+		body="I am still hung up on life is strange."
+		img = "/iconlis.png"
+		/>
+		</NotifWrap>
 		<div class="flex flex-col justify-center w-full md:m-[3rem] md:mt-[3rem] mt-[2rem]">
 		<Salut client:visible />
 		<img src="/name.svg" alt="Om Thorat" class="w-full landscape:w-2/3 md:w-2/3 object-contain pt-7">
@@ -45,9 +45,9 @@ import NotifWrap from '../components/NotifWrap.svelte';
 		link= "the midnight library"
 		href = "https://www.goodreads.com/book/show/52578297-the-midnight-library"
 		body="For side quests currently reading "
-		link2 = "Life is Strange"
-		href2 = "https://store.steampowered.com/app/319630/Life_is_Strange__Episode_1/"
-		body2=" and sobbing over "
+		link2 = "Stardew Valley"
+		href2="https://store.steampowered.com/app/413150/Stardew_Valley/"
+		body2=" and foraging in "
 		link3 = ""
 		body3 = ""
 		href3="/"
