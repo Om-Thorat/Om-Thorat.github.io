@@ -53,6 +53,10 @@
             newsparkle.setAttribute("id",`${t}`)
             newsparkle.style.position = "absolute"
             newsparkle.style.visibility = ""
+            if (coord.top + 5 >= TotalY || coord.left + 5 >= TotalX){
+                trail.remove()
+                break
+            }
             newsparkle.style.top = `${coord.top}px`
             newsparkle.style.left = `${coord.left}px`
             trail.append(newsparkle)
@@ -60,6 +64,10 @@
                 trail.children[0].remove()
             }
         }
+    }
+    for (let i = 100; i >= 0; i--) {
+        btrfly.style.opacity = (i/100).toString();
+        await sleep(10)
     }
 }
 async function wait() {
@@ -70,7 +78,7 @@ onMount(fly)
 
 <div bind:this={btrfly} style="
 display: flex;
-position: absolute;
+position: fixed;
 transition: all 40ms linear 0s;
 z-index: 10;
 width: 60px;
@@ -78,16 +86,17 @@ height: 64px;
 left: {left}%;
 top: {ctop}%;
 "
+class="max-md:scale-[0.8]"
 >
 <div style="width: 10px;height: 60px;display: flex;">
 <svg width="10" height="60" viewBox="0 0 10 60" fill="none" style="transition: transform 40ms ease-in;position: absolute;" xmlns="http://www.w3.org/2000/svg">
     <circle cx="5" cy="30" r="2.5" fill="#fbcb59" bind:this={anchor} style="visibility: hidden;"></circle>
 </svg>
-<img src="/sparklesirl.svg" alt="" bind:this={sparkle} width="10" height="10" class="fade" style="fill=#FFF;transition: transform 40ms ease-in;position: absolute;visibility: hidden;">
+<img src="/sparklesirl.svg" alt="" bind:this={sparkle} width="10" height="10" class="fade max-md:scale-90" style="fill=#FFF;transition: transform 40ms ease-in;position: fixed;visibility: hidden;">
 </div>
 <img src="/Butterfly.gif" alt="Butterfly" bind:this={btrfly} height="64px" width="60px" class="h-[64px] w-[60px]" style="transition: all 40ms linear 0s; z-index: 10;position: absolute;">
 </div>
-<div bind:this={trail}></div>
+<div bind:this={trail} class=""></div>
 
 <style>
     @keyframes fadeout {
