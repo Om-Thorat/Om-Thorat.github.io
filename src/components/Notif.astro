@@ -8,13 +8,13 @@ export interface Props {
 const { img,title,body,href } = Astro.props;
 ---
 
-<div class="w-[15vw] h-[10vh] max-w-[250px] min-w-[150px] max-h-[80px] min-h-[45px] rounded-lg backdrop-blur-lg outline outline-2 outline-[#F1A0CB] right-5 top-5 absolute overflow-hidden drop cursor-pointer transition-all duration-300 shadow-md shadow-pink-400 hover:shadow-lg hover:shadow-pink-500">
+<div class="w-[15vw] h-[10vh] max-w-[250px] min-w-[150px] max-h-[80px] min-h-[45px] opacity-70 hover:opacity-100 rounded-lg backdrop-blur-lg outline outline-2 outline-[#F1A0CB] right-5 top-5 absolute overflow-hidden drop cursor-pointer transition-all duration-300 shadow-md shadow-pink-400 hover:shadow-lg hover:shadow-pink-500">
 <div class="noise h-full w-full absolute"></div>
 <div class="flex mx-[2%] my-[1%] items-center h-[90%] w-full gap-3">
     <img src={img} class="w-[25%] ml-2 aspect-square rounded-md oof object-cover" />
-    <div class="text-base leading-5 w-[25%] aspect-square flex flex-col justify-center items-start font-['Josefin_Sans'] text-[#EC62BA] ">
+    <div class="text-base leading-5 w-[25%] aspect-square flex flex-col justify-center items-start font-['Josefin_Sans'] text-[#fe98d9b9] ">
         {title}
-    <div class="text-[0.7rem] text-[#fcf45ce0] leading-[0.8rem] w-[220%]">{body}</div>
+    <div class="text-[0.7rem] text-[#f3ef9bc5] leading-[0.8rem] w-[220%]">{body}</div>
     </div>
 </div>
 </div>

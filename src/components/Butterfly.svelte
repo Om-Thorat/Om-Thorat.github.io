@@ -24,16 +24,20 @@
         if (start){
             k = -k;
             o = -o;
+            console.log(btrfly.style.justifyContent)
+            if (trail.classList.contains("hidden")){
+                trail.classList.remove("hidden")
+            }
+            else{
+                trail.classList.add("hidden")
+            }
             return
         }
         start = true
         var TotalX = window.innerWidth;
         var TotalY = window.innerHeight;
-        for(let i = 5;i<1000;i++){
-        if ((t>1) || (t<0)){
-            break
-        }
-        // console.log(t)
+        while ((t<1) && (t>0)){
+        console.log(t)
         var x = ((1-t)**3)*x1 + (3*(1-t)**2)*t*x2 + (3*(1-t))*t*t*x3 + (t**3)*x4
         var y = ((1-t)**3)*y1 + (3*(1-t)**2)*t*y2 + (3*(1-t))*t*t*y3 + (t**3)*y4
         var dx = x1*(-3+6*t-3*t**2)+x2*(3-12*t+9*t**2)+x3*(6*t-9*t**2)+3*x4*t**2
@@ -41,7 +45,6 @@
         var dy = y1*(-3+6*t-3*t**2)+y2*(3-12*t+9*t**2)+y3*(6*t-9*t**2)+3*y4*t**2
         dy = TotalY*dy
         turn = (Math.atan2(dy,dx))
-        console.log(turn,TotalX,TotalY)
         t = t + k*Math.abs((turn)) + o*0.001
         btrfly.style.rotate = `${(Math.atan2(dy,dx))}rad`
         btrfly.style.left = `${x}%`
@@ -69,6 +72,7 @@
         btrfly.style.opacity = (i/100).toString();
         await sleep(10)
     }
+    btrfly.style.display = "none";
 }
 async function wait() {
     await sleep(500)
@@ -86,7 +90,7 @@ height: 64px;
 left: {left}%;
 top: {ctop}%;
 "
-class="max-md:scale-[0.8]"
+class="max-md:scale-[0.8] cursor-pointer"
 >
 <div style="width: 10px;height: 60px;display: flex;">
 <svg width="10" height="60" viewBox="0 0 10 60" fill="none" style="transition: transform 40ms ease-in;position: absolute;" xmlns="http://www.w3.org/2000/svg">
@@ -94,7 +98,7 @@ class="max-md:scale-[0.8]"
 </svg>
 <img src="/sparklesirl.svg" alt="" bind:this={sparkle} width="10" height="10" class="fade max-md:scale-90" style="fill=#FFF;transition: transform 40ms ease-in;position: fixed;visibility: hidden;">
 </div>
-<img src="/Butterfly.gif" alt="Butterfly" bind:this={btrfly} height="64px" width="60px" class="h-[64px] w-[60px]" style="transition: all 40ms linear 0s; z-index: 10;position: absolute;">
+<img src="/Butterfly.gif" alt="Butterfly" on:click={fly} bind:this={btrfly} height="64px" width="60px" class="h-[64px] w-[60px]" style="transition: all 40ms linear 0s; z-index: 10;position: absolute;">
 </div>
 <div bind:this={trail} class=""></div>
 
