@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" class="astro-NFBRTYKG">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image/png" href="/favicon.png">
+		<meta name="generator" content="Astro v2.0.11">
+		<meta name="description" content="Building With Astro and some other frustations">
+		<title>Building With Astro</title>
+	<link rel="stylesheet" href="/_astro/_...slug_.abae693f.css" />
+<link rel="stylesheet" href="/_astro/_...slug_.8095eede.css" />
+<link rel="stylesheet" href="/_astro/_...slug_.46fb485a.css" /></head>
+	<body class="w-full flex flex-col coolscroll backdrop-brightness-125 flex-grow items-center max-w-[100%] bg-cover bg-no-repeat astro-NFBRTYKG">
+        <a class="top-3 left-3 absolute font-['VT323'] text-[#91A4F8] tracking-wider text-lg astro-NFBRTYKG" href="/blog">< Back</a>
+        <article class="z-10 max-w-full w-[90%] min-[400px]:w-[80%] md:w-1/2 block prose lg:prose-xl text-white prose-invert mt-10 prose-headings:leading-[1.3] prose-headings:mb-2 prose-h2:mt-7 prose-blockquote:prose-p:before:hidden prose-p:before:hidden prose-blockquote:font-mono prose-blockquote:not-italic prose-blockquote:text-base astro-NFBRTYKG">
+            <style>astro-island,astro-slot{display:contents}</style><script>(self.Astro=self.Astro||{}).only=t=>{(async()=>await(await t())())()},window.dispatchEvent(new Event("astro:only"));var l;{const c={0:t=>t,1:t=>JSON.parse(t,o),2:t=>new RegExp(t),3:t=>new Date(t),4:t=>new Map(JSON.parse(t,o)),5:t=>new Set(JSON.parse(t,o)),6:t=>BigInt(t),7:t=>new URL(t),8:t=>new Uint8Array(JSON.parse(t)),9:t=>new Uint16Array(JSON.parse(t)),10:t=>new Uint32Array(JSON.parse(t))},o=(t,s)=>{if(t===""||!Array.isArray(s))return s;const[e,n]=s;return e in c?c[e](n):void 0};customElements.get("astro-island")||customElements.define("astro-island",(l=class extends HTMLElement{constructor(){super(...arguments);this.hydrate=()=>{if(!this.hydrator||this.parentElement&&this.parentElement.closest("astro-island[ssr]"))return;const s=this.querySelectorAll("astro-slot"),e={},n=this.querySelectorAll("template[data-astro-template]");for(const r of n){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("data-astro-template")||"default"]=r.innerHTML,r.remove())}for(const r of s){const i=r.closest(this.tagName);!i||!i.isSameNode(this)||(e[r.getAttribute("name")||"default"]=r.innerHTML)}const a=this.hasAttribute("props")?JSON.parse(this.getAttribute("props"),o):{};this.hydrator(this)(this.Component,a,e,{client:this.getAttribute("client")}),this.removeAttribute("ssr"),window.removeEventListener("astro:hydrate",this.hydrate),window.dispatchEvent(new CustomEvent("astro:hydrate"))}}connectedCallback(){!this.hasAttribute("await-children")||this.firstChild?this.childrenConnectedCallback():new MutationObserver((s,e)=>{e.disconnect(),this.childrenConnectedCallback()}).observe(this,{childList:!0})}async childrenConnectedCallback(){window.addEventListener("astro:hydrate",this.hydrate);let s=this.getAttribute("before-hydration-url");s&&await import(s),this.start()}start(){const s=JSON.parse(this.getAttribute("opts")),e=this.getAttribute("client");if(Astro[e]===void 0){window.addEventListener(`astro:${e}`,()=>this.start(),{once:!0});return}Astro[e](async()=>{const n=this.getAttribute("renderer-url"),[a,{default:r}]=await Promise.all([import(this.getAttribute("component-url")),n?import(n):()=>()=>{}]),i=this.getAttribute("component-export")||"default";if(!i.includes("."))this.Component=a[i];else{this.Component=a;for(const d of i.split("."))this.Component=this.Component[d]}return this.hydrator=r,this.hydrate},s,this)}attributeChangedCallback(){this.hydrator&&this.hydrate()}},l.observedAttributes=["props"],l))}</script><div class="flex flex-col justify-center"><span class="font-['Dongle'] text-4xl">12 February </span><h1 class="z-10 text-white text-center">Building With Astro</h1><div class="h-9 z-0 -translate-y-9 bg-rose-400"></div></div><blockquote>
+<p>Hello Hi Hey Welcome to my first blog post the writing might be weird,boring and rash but bear 🐻 with me as i learn how to write better,  Thanks.</p>
+</blockquote>
+<p>Originally this whole website was supposed to be built in 6 hours, It actually took <strong>3 Days</strong>.</p>
+<p><em>WHY?</em> because that’s how the whole world works nothing ever goes right you never get your package delivered on time because a ship is stuck in a canal continents away.</p>
+<p>Even though I didn’t finish on time, I did finish eventually and the experience of building it was nothing but joyous and extremely frustating.</p>
+<blockquote>
+<p>Content below may include boring technical stuff feel free to not read.</p>
+</blockquote>
+<p>Firstly this Blog and the whole website is built with the amazing framework <a href="https://Astro.build">Astro🚀</a> the interactive bits are built with the incredible <a href="https://Svelte.dev">Svelte</a> and styled with <a href="https://Tailwindcss.com">Tailwind</a>.</p>
+<p>The experience using all these tools was nothing but Great.</p>
+<ul>
+<li>Smooth lift of with <code>npm create astro@latest</code>.</li>
+<li>Effortless integrations with <code>npx astro add svelte tailwind mdx</code>.</li>
+<li>Inbuilt TypeScript Support.</li>
+</ul>
+<p>What more could you ask for?</p>
+<h2 id="astro">Astro 🚀</h2>
+<p>Getting started with Astro might be easier than any other framwork available the integrations were seamless it merely took me 3 commands to get started with Astro,Svelte and tailwind all configured.</p>
+<pre is:raw="" class="astro-code" style="background-color: #0d1117; overflow-x: auto;"><code><span class="line"><span style="color: #C9D1D9">npm create Astro@latest npx </span></span>
+<span class="line"><span style="color: #C9D1D9">Astro add tailwind svelte mdx</span></span></code></pre>
+<p>Apart from that the Astro Documentation is very well written 🚀 and setting up a blog has never been easier.</p>
+<h2 id="svelte">Svelte 🤖</h2>
+<p>Svelte stays true to their tagline and truly <code>cybernetically enhances apps</code> before using Svelte I tried react and that was just messy I felt like i was somehow writing and doing more than just writing vanilla javascript. Svelte syntax is short , sleek and it will make you question why use any other framework at all.</p>
+<h2 id="tailwind">Tailwind</h2>
+<p>Uhh I would like to stay out of this one.<br>
+The only thing i know is that it’s much less of a saviour than a mess but then all css is mess.</p>
+<h1 id="see-ya">See Ya 👋</h1>
+<p>That’s it for now i’ll probably update this later i also do have to talk about the butterfly and that one is a story to tell.</p><footer class="h-16 md:translate-x-[-3rem] flex items-center flex-col md:flex-row">
+        <div class="font-['Dongle'] w-full justify-center md:justify-start md:mx-[3rem] md:w-[66%] gap-3 flex text-4xl md:text-3xl text-[#91A4F8]  astro-YXTIFMRQ">
+    <a class="hlink astro-YXTIFMRQ" href="https://twitter.com/ProbablyOm">Twitter</a><a class="hlink astro-YXTIFMRQ" href="https://www.instagram.com/obviouslynotom/">Insta</a><a class="hlink astro-YXTIFMRQ" href="https://discordapp.com/users/729969911933304852">Discord</a><a class="hlink astro-YXTIFMRQ" href="https://github.com/om-thorat">Github</a>
+</div>
+    </footer><astro-island uid="24vWnC" component-url="/_astro/Track.ddb62a8e.js" component-export="default" renderer-url="/_astro/client.0a29acc0.js" props="{}" ssr="" client="only" opts="{&quot;name&quot;:&quot;Track&quot;,&quot;value&quot;:true}"></astro-island>
+        </article>
+		<a class="bottom-3 left-3 absolute font-['VT323'] text-[#91A4F8] tracking-wider text-lg astro-NFBRTYKG" href="/blog">< Back</a>
+	</body></html>

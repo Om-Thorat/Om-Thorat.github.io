@@ -13,10 +13,7 @@ import mdx from "@astrojs/mdx";
 import image from "@astrojs/image";
 
 // https://astro.build/config
-import compress from "astro-compress";
-
-// https://astro.build/config
 export default defineConfig({
   site: 'https://Om-Thorat.github.io',
-  integrations: [svelte(), tailwind(), mdx(), image(), compress()],
+  integrations: [svelte(), tailwind(), mdx(), image()],
 });

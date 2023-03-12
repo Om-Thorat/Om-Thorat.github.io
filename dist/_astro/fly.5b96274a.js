@@ -1,0 +1,1 @@
+function o(t,e){var n=t.getBoundingClientRect(),i=e.getBoundingClientRect();return Math.sqrt((n.top-i.top)**2+(i.left-n.left)**2)}function r(t){return new Promise(e=>setTimeout(e,t))}export{o as G,r as s};

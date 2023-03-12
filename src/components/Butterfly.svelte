@@ -98,6 +98,7 @@ class="max-md:scale-[0.8] cursor-pointer"
 </svg>
 <img src="/sparklesirl.svg" alt="" bind:this={sparkle} width="10" height="10" class="fade max-md:scale-90" style="fill=#FFF;transition: transform 40ms ease-in;position: fixed;visibility: hidden;">
 </div>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <img src="/Butterfly.gif" alt="Butterfly" on:click={fly} bind:this={btrfly} height="64px" width="60px" class="h-[64px] w-[60px]" style="transition: all 40ms linear 0s; z-index: 10;position: absolute;">
 </div>
 <div bind:this={trail} class=""></div>

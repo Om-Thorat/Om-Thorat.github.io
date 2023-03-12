@@ -1,0 +1,1 @@
+import{S as n,i as s,s as o}from"./index.5ae8cf35.js";function a(t){return console.log(`https://notom.vercel.app/track?n=${document.title}&p=visit`),fetch(`https://notom.vercel.app/track?n=${document.title}&p=visit`),[]}class i extends n{constructor(e){super(),s(this,e,a,null,o,{})}}export{i as default};
