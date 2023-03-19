@@ -8,7 +8,7 @@
             const date = new Date()
             const start = new Date(since)
             var diffdate:Date = new Date(date - start)
-            diff = ` ${diffdate.getDate().toString().padStart(2,'0')} days ${diffdate.getHours().toString().padStart(2,'0')} hours ${(diffdate.getMinutes().toString().padStart(2,'0'))} minutes and ${diffdate.getSeconds().toString().padStart(2,'0')} seconds` ;
+            diff = `${diffdate.getMonth().toString().padStart(2,'0')} months ${diffdate.getDate().toString().padStart(2,'0')} days ${diffdate.getHours().toString().padStart(2,'0')} hours ${(diffdate.getMinutes().toString().padStart(2,'0'))} minutes and ${diffdate.getSeconds().toString().padStart(2,'0')} seconds` ;
             await sleep(20)
         }
     }
