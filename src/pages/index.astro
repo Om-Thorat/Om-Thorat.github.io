@@ -2,7 +2,6 @@
 import Layout from '../layouts/Layout.astro';
 import Salut from '../components/Salut.svelte';
 import Intro from '../components/Intro.svelte';
-import About from '../components/About.astro';
 import Social from '../components/Social.astro';
 import Song from '../components/Song.svelte';
 import Cred from '../components/Cred.astro';
@@ -11,6 +10,9 @@ import Track from '../components/Track.svelte';
 import Butterfly from '../components/Butterfly.svelte';
 import Notif from '../components/Notif.astro';
 import NotifWrap from '../components/NotifWrap.svelte';
+import Book from '../components/Book.svelte';
+import ConAbout from '../components/ConAbout.astro';
+import Link from '../components/Link.astro';
 ---
 <Layout title="Om's Cloud" desc="Hey! I am Om,Welcome to My Cloud on the internet.">
 	<Butterfly client:only />
@@ -28,43 +30,15 @@ import NotifWrap from '../components/NotifWrap.svelte';
 		<Salut client:visible />
 		<img src="/name.svg" alt="Om Thorat" class="w-full landscape:w-2/3 md:w-2/3 object-contain pt-7">
 		<Intro client:visible />
-		<!-- Yes this component isn't very good i'll fix it -->
-		<About
-		link= ""
-		body="In the end Just an average person stumbling through life. building Silly little websites 🎈"
-		link2 = ""
-		body2 = ""
-		link3 = ""
-		body3 = ""
-		href = "/"
-		href2 = "/"
-		href3 = "/"
-		end = ","
-		/>
-		<About
-		link= "the midnight library"
-		href = "https://www.goodreads.com/book/show/52578297-the-midnight-library"
-		body="For side quests currently reading "
-		link2 = "Stardew Valley"
-		href2="https://store.steampowered.com/app/413150/Stardew_Valley/"
-		body2=" and foraging in "
-		link3 = ""
-		body3 = ""
-		href3="/"
-		end = ","
-		/>
-		<About
-		link= "projects"
-		href="/projects"
-		body="Feel free to snoop around checkout some "
-		body2 = " read my "
-		link2 = "blog"
-		href2 = "/blog"
-		body3 = " or send me an "
-		link3 = "Owl"
-		href3="mailto:thoratom1104@gmail.com"
-		end = "!"
-		/>
+		<ConAbout>
+			In the end Just an average person stumbling through life. building Silly little websites 🎈,
+		</ConAbout>
+		<ConAbout>
+			For side quests currently reading <Link href="https://www.goodreads.com/book/show/52578297-the-midnight-library" link="Pride & Prejudice" />  and foraging in <Link href="https://store.steampowered.com/app/413150/Stardew_Valley/" link="Stardew Valley" />,
+		</ConAbout>
+		<ConAbout>
+			Feel free to snoop around checkout some <Link href="/projects" link="projects" /> read my <Link href="/blog" link="blog" /> or send me an <Link href="mailto:thoratom1104@gmail.com" link="Owl!" />
+		</ConAbout>
 		</div>
 		<div class="py-8 md:w-1/2 landscape:w-1/2 landscape:h-auto md:h-auto z-10 flex items-center justify-center">
 			<Song client:visible />
