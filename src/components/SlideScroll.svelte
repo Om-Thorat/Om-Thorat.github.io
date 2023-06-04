@@ -22,7 +22,7 @@ async function move(){
 onMount(move)
 </script>
 
-<div bind:this={ScrollContainer} class="w-full h-[40%] max-md:landscape:scale-125 md:h-full flex overflow-y-scroll md:overflow-hidden overflow-x-auto snap-y snap-mandatory md:flex-row flex-col gap-7 z-10 justify-start items-center">
+<div bind:this={ScrollContainer} class="w-full h-[40%] max-md:landscape:scale-125 md:h-full flex overflow-y-scroll md:overflow-hidden overflow-x-hidden snap-y snap-mandatory md:flex-row flex-col gap-7 z-10 justify-start items-center">
     <slot />
 </div>
 

@@ -18,5 +18,5 @@
 <div class="scale-125 md:scale-100 text-center w-[50%] justify-between md:justify-evenly flex py-3 font-['VT323'] text-[#91A4F8] text-2xl">
     <a href="/"  on:click={Event => out(Event)} class="z-30">//Home</a>
     <a href="/projects" on:click={Event => out(Event)} class="z-30">//Projects</a>
-    <a href="/blog" on:click={Event => out(Event)} class="z-30">//Blog</a>
+    <a href="/wall" on:click={Event => out(Event)} class="z-30">//Wall</a>
 </div>

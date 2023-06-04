@@ -1,5 +1,5 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import LayProj from '../layouts/LayProj.astro';
 import ShowCard from '../components/ShowCard.astro';
 import SlideScroll from '../components/SlideScroll.svelte';
 import Social from '../components/Social.astro';
@@ -8,9 +8,9 @@ import Nav from '../components/Nav.svelte';
 import Track from '../components/Track.svelte';
 ---
 
-<Layout title="Projects" desc="These are some projects i made over the years">
+<LayProj title="Projects" desc="These are some projects i made over the years">
     <Nav client:visible />
-    <main class="flex w-full h-[80%] fadein opacity-0 md:h-[80%] flex-row justify-center items-center gap-4 transition-opacity duration-700 ease-out">
+    <main class="max-sm:scale-95 overflow-x-hidden flex w-full h-[80%] fadein opacity-0 md:h-[80%] flex-row justify-center items-center gap-4 transition-opacity duration-700 ease-out">
         <SlideScroll client:visible>
         <div class="min-w-[23%] h-full justify-center items-center font-['Dongle'] text-4xl leading-none text-yellow-300 flex flex-col max-md:hidden"> Scroll down <br><span class="w-full text-center">👇🏽</span> </div>
         <ShowCard title="Defer 🪄" href="github.com/Om-Thorat/Defer/releases/tag/v1.1.0" body="Too many apps open? Need to take a break but don't wanna loose them?\nOne click and your apps go poof 🪄 another click to restore them back to the exact state they were in 🎉." github="https://github.com/Om-Thorat/Defer" />
@@ -29,7 +29,7 @@ import Track from '../components/Track.svelte';
 		<Cred />
 	</footer>
     <Track client:only />
-</Layout>
+</LayProj>
 
 <style>
     /* @keyframes fadein{
