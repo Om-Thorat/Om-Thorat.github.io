@@ -5,20 +5,28 @@ import LayWall from "../layouts/LayWall.astro";
 <LayWall>
     <div class="pt-5 left-[74%] top-[1%] text-white text-3xl font-mono">The Wall</div>
     <div class="left-[10%] top-[9%]"><img src="https://i.imgur.com/xcB7xHW.jpeg" width="400px" alt="Stephen and Jane Hawking together during their younger years"></div>
-    <div class="z-10 left-[50%] top-[17%] w-[30%]" ><iframe width="560px" height="315px" src="https://www.youtube.com/embed/69Vh5aP4bJA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    <div class="z-10 left-[50%] top-[17%]" ><iframe class="w-[39vw] max-md:w-[95vw]" src="https://www.youtube.com/embed/69Vh5aP4bJA" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
     <div class="left-[34%] top-[50%]"><img width="300px" src="https://i.pinimg.com/564x/94/ba/31/94ba31cbdb2a76ff52a0d0f2f9293562.jpg" alt="The life is strange butterfly"></div>
     <div class="-z-10 left-[25%] top-[70%]"><a href="https://twitter.com/pettycommajared/status/1303769014401773568/photo/1"><img width="800px" height="300px" src="/thisisfine.jpg" alt="This is fine"></a></div>
     <div class="left-[8%] top-[95%]"><img src="/alanturing.jpg"></div>
     <div class="left-[68%] top-[131%]"><img width="352px" src="/frank.png"></div>
     <div class="left-[10%] top-[150%]"><img width="150px" src="/bright.jpg"></div>
+    <div class="top-[165%] left-[15%] -z-20"><img class="w-[70vw] max-md:w-[97vw]" src="https://i.pinimg.com/originals/90/ff/84/90ff84d305db5f433ae5c75b3f24341d.jpg"></div>
     <div class="-z-10 top-[136%] left-[47%]"><img width="200px" src="/mario.gif"></div>
     <!-- <div class="left-[40%] top-[137%]"><iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4U45aEWtQhrm8A5mxPaFZ7?utm_source=generator&theme=0" width="100%" height="352" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe></div> -->
-    <div class="top-[165%] left-[15%] -z-20"><img class="w-[70vw]" src="https://i.pinimg.com/originals/90/ff/84/90ff84d305db5f433ae5c75b3f24341d.jpg"></div>
-    <div class="top-[205%] left-[5%]"><iframe width="560" height="315" src="https://www.youtube.com/embed/pKz_fMAbtCw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    <div class="top-[205%] left-[5%]"><iframe class="w-[39vw] max-md:w-[95vw]" src="https://www.youtube.com/embed/pKz_fMAbtCw" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+    <div class="top-[205%] left-[60%]"><img alt="Because i could not stop for death, It kindly stopped for me, The carriage held just ourselves and immortality ~ Emily Dickinson"  src="/emily.png"></div>
+    <div class="top-[243%] left-[5%]"><img class="w-[30vw] max-md:w-[95vw]" alt="Margaret Hamilton standing beside the code she and team wrote for the apollo missions" src="/margaret-hamilton.png"></div>
+    <div class="z-10 top-[248%] left-[33%]"><img class="w-[30vw] max-md:w-[95vw]" alt="Katie Bowamn finally looking at the first Black hole picture after leading the research for years" src="/bowman.png"></div>
+    <a href="http://info.cern.ch"><div class="top-[298%] left-[60%]" ><img alt="The first ever website ~ cern" src="/web.png"></div></a>
+    <div class="top-[257%] left-[68%]"><img class="w-[30vw] max-md:w-[95vw]" alt="Enjoy a grasshopper pic i took, He is very cute and is named Picket" src="/picket.png"></div>
 </LayWall>
 
 <style>
     div{
-        position: absolute;
+        @apply md:absolute max-w-full
+    }
+    iframe{
+        aspect-ratio: 560/315;
     }
 </style>
