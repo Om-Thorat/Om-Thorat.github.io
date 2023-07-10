@@ -10,7 +10,7 @@ import Track from '../components/Track.svelte';
 import Butterfly from '../components/Butterfly.svelte';
 import Notif from '../components/Notif.astro';
 import NotifWrap from '../components/NotifWrap.svelte';
-import Book from '../components/Book.svelte';
+import Reading from '../components/Reading.svelte';
 import ConAbout from '../components/ConAbout.astro';
 import Link from '../components/Link.astro';
 ---
@@ -34,7 +34,7 @@ import Link from '../components/Link.astro';
 			In the end Just an average person stumbling through life. building Silly little websites 🎈,
 		</ConAbout>
 		<ConAbout>
-			For side quests currently reading <Link href="https://www.goodreads.com/book/show/1885.Pride_and_Prejudice" link="Pride & Prejudice" />  and foraging in <Link href="https://store.steampowered.com/app/413150/Stardew_Valley/" link="Stardew Valley" />,
+			For side quests currently reading <Reading client:only /> and foraging in <Link href="https://store.steampowered.com/app/413150/Stardew_Valley/" link="Stardew Valley" />,
 		</ConAbout>
 		<ConAbout>
 			Feel free to snoop around checkout some <Link href="/projects" link="projects" /> read my <Link href="/blog" link="blog" /> or send me an <Link href="mailto:thoratom1104@gmail.com" link="Owl!" />

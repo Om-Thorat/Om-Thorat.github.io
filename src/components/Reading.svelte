@@ -1,0 +1,45 @@
+<script lang="ts">
+  import { onMount } from "svelte";
+
+    let href:string;
+    let link:string = "..........";
+    async function Gather() {
+        const r = await fetch("https://notom.vercel.app/reading")
+        const data = await r.json();
+        console.log(data);
+        link = data[0];
+        href = "https://www.goodreads.com/" + data[1];
+    }
+    onMount(Gather);
+</script>
+
+
+For side quests currently reading  <a class="hlink" target="_blank" rel="noreferrer" href={href}>{link}</a>
+
+<style>
+
+.hlink {
+color: rgb(244 114 182);
+cursor: pointer;
+display: inline-block;
+position: relative;
+}
+
+.hlink::after {
+content: '';
+position: absolute;
+width: 100%;
+transform: scaleX(0);
+height: 2px;
+bottom: 0;
+left: 0;
+background-color: rgb(244 114 182);
+transform-origin: bottom right;
+transition: transform 0.25s ease-out;
+}
+
+.hlink:hover::after {
+transform: scaleX(1);
+transform-origin: bottom left;
+}
+</style>
