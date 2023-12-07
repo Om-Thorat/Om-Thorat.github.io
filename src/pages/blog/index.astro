@@ -14,7 +14,7 @@ const posts = (await getCollection('blog')).sort(
         <div class="min-h-[10%]"></div>
                 {
                     posts.map((post) => (
-                        <div class="flex flex-row items-center"><img class="mix-blend-overlay object-cover rounded-xl min-h-[4px] max-h-[6px] translate-x-2 md:translate-x-[25vw] w-[15vw]" src="/line2.svg"><span class="translate-x-2 md:translate-x-[25vw] font-['Dongle'] text-3xl opacity-75 text-white pl-[0.5vw] pr-[2vw] whitespace-nowrap min-w-[12.6ch]">{post.data.pubDate.toLocaleString('default',{day:'2-digit',month:'long'})}</span><a href={`/blog/${post.slug}/`} class="translate-x-2 md:translate-x-[25vw] font-['Dongle'] text-[2.5rem] text-white pr-4 whitespace-nowrap max-w-[73vw] md:max-w-[43vw] overflow-hidden text-ellipsis">{post.data.title}</a></div>
+                        <div class="flex flex-row items-center"><img class="mix-blend-overlay object-cover rounded-xl min-h-[4px] max-h-[6px] translate-x-2 md:translate-x-[25vw] w-[15vw]" src="/line2.svg"><span class="translate-x-2 md:translate-x-[25vw] font-['Dongle'] text-3xl opacity-75 text-white pl-[0.5vw] whitespace-nowrap min-w-[12.6ch]">{post.data.pubDate.toLocaleString('default',{day:'2-digit',month:'long'})}</span><a href={`/blog/${post.slug}/`} class="translate-x-2 md:translate-x-[25vw] font-['Dongle'] text-[2.5rem] text-white pr-4 whitespace-nowrap max-w-[73vw] md:max-w-[43vw] overflow-hidden text-ellipsis">{post.data.title}</a></div>
                     ))
                 }
     </main>
