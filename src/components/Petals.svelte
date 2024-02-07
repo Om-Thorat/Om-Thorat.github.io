@@ -1,13 +1,15 @@
 <script lang="ts">
     import { onMount } from "svelte";
+    import { sleep } from "../scripts/fly";
     let pdiv:HTMLDivElement;
     const petalRotations = [-80, -60, -40, -20, 10, 40, 60, 80, 100];
-    function assign(){
+    async function assign(){
         let petals = pdiv.children;
         // console.log("hi");
+        await sleep(50)
         for(let i = 0; i < petals.length; i++){
             const petals = Array.from(pdiv.children) as HTMLDivElement[];
-            console.log(petals[i]);
+            // console.log(petals[i]);
             petals[i].style.rotate = `${petalRotations[i]}deg`;
         }
     }
@@ -41,7 +43,7 @@
         animation: breathe 5s infinite alternate;
         scale: 2;
         rotate: 0deg;
-        transition: rotate 0.5s ease-in-out;				
+        transition: rotate 1s ease-out;				
     }
 
     @keyframes breathe {
@@ -92,6 +94,6 @@
     }
 
     .theonewhogoes{
-        animation: leave 16s infinite ease-in 1s;
+        animation: leave 16s infinite ease-in 2s;
     }
 </style>
