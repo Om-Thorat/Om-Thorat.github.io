@@ -1,0 +1,41 @@
+---
+title: "Reverse engineering Instagram to fix my screentime"
+description: "Scrolling reels is addictive and I got way too much to do than spending my time."
+pubDate: "Sep 3 2024"
+---
+
+> This whole article is just for exploratory and educational purposes. I do not endorse any unethical hacking or reverse engineering of any kind. Nor do I advise or teach how to do so.
+
+Hi, Sophomore year of my comp sci degree has left me with absolutely zero free time, and when I do get some, occasionally I have way too much to do rather than spend it on Instagram, like writing this blog post 😅. So I decided to fix my screen time by reverse engineering Instagram and somehow making it impossible to scroll reels.
+
+### The story 📖
+
+Some time ago a lil bird told me about [apktool](https://github.com/iBotPeaches/Apktool), Apktool makes it super easy for you to decompile apks and then recompile them back. 
+
+It makes decompiling as simple as
+```bash
+apktool d [apkfile] --no-res 
+```
+
+The `--no-res` flag makes sure that the resources are not decompiled, which is not needed for our purpose.
+
+Once we have the decompiled code in a folder, I started looking through it. Since apktool only decompiles to .smali files, It wasn't very readable. Smali is a type of assembly language for the Dalvik VM, which is the VM that runs Android apps. 
+
+Even though the code was barely understandable a bit of substantial info was the file names. I tried to find relevant files by searching for `reel` and I found a folder named `reels`.Eventually, I found a file named `ReelViewerConfig.smali` looking for a quick dirty fix to test if this was even possible. I deleted the `writoParcel` function in the same file and recompiled the apk.
+
+```bash
+apktool b [decompiled-folder] -o [output-apk]
+```
+
+Cool! We have the apk but to make it installed on a phone we need to zipalign it and then sign the resulting apk. I used `zipalign` and `keytool` to do so. The following article elaborates in depth.
+[Hacktricks article](https://book.hacktricks.xyz/mobile-pentesting/android-app-pentesting/smali-changes).
+
+After aligning and signing it we finally have an installable apk. Next, I transferred it and installed the modified apk on my phone, and welp to my surprise the reels were still working, hmm that's weird, I accidentally opened a story, and poof. The app crashed. 
+welp? What's going on? Deleting the function did give the desired effect but for stories, not reels.
+
+Upon researching a bit I found out the internal name for Stories is "reel" meanwhile internal name for Reels is "clips". So I went back to the decompiled code and found a file named `ClipsViewerConfig.smali` and deleted the `writeToParcel` function in that file. Recompiled the apk and installed it on my phone. opened the Instagram app and tried to open a reel and poof! the app crashed. The app crashed even when a reel came on my feed or I clicked on one. No more watching or scrolling reels.  
+
+> While this is not a perfect solution, Ideally I would love to just disable the scroll action. but as mentioned no time! hopefully, I'll update this Sometime in the future. Until then see ya.
+
+~ with 💖 by Om.
+
