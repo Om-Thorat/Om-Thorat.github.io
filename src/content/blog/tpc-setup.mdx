@@ -1,0 +1,66 @@
+---
+title: "TPC Setup Guide"
+description: "A little setup guide for juniors to get started."
+pubDate: "Oct 8 2024"
+
+---
+
+## Windows
+
+1. Make sure you have `Terminal` app installed in your system. You can do so by searching for Terminal in windows start menu.
+
+> > If you don't have the Terminal app you can install it from the Microsoft Windows Store.
+
+2. Visit [Scoop.sh](https://scoop.sh). Copy the Given commands show right below QuickStart. Same commands are pasted below for reference.
+
+```bash
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+```
+
+Copy the commands given above and paste them in your Terminal.
+
+>> If you experience any errors try updating your Powershell app from the Microsoft store, Or switching to a better internet connection.
+
+Close and reopen your Terminal.
+
+3. On [Scoop.sh](https://scoop.sh) Search for Mingw. Find the one labelled as *mingw in main*. Futher paste the given command in your Terminal.
+
+```bash
+scoop install main/Mingw
+```
+
+>> If you get an error saying "scoop is not a valid command". Try closing and reopening your Terminal.
+
+4. Close you Terminal and reopen it. Type in `g++` and voila! You have the mingw compiler installed and running.
+
+## VS Code
+
+1. Download VS Code from [Code.visualstudio.com](https://code.visualstudio.com/download). Beware Visual Studio Code and Visual Studio are two different programs. Vs code is a code editor while the latter is a full fledged IDE.
+
+2. Download the Coderunner extension using the VS code extensions tab.
+
+3. Go to extensions > Coderuner > Coderunner Settings. Further look for Run in Terminal and tick the box. Then go ahead and also tick the box for save file before run.
+
+![](/coderunner.png) ![](/crsetting.png)
+
+3. Once you have Coderunner downloaded let's create a new file with *Ctrl+n*. Input this basic hello world program in C++.
+
+```cpp
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Hello World!";
+    return 0;
+}
+```
+
+4. Save the file with a `.cpp` extension, at your desired place.
+
+5. Now press `Ctrl+Alt+n` to run the code. You should see the output in the terminal below.
+
+6. If you see the output you are all set!.
+
+{/* ## Competitive Programming */}
+
