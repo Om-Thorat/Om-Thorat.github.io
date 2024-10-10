@@ -11,7 +11,9 @@ pubDate: "Oct 8 2024"
 
 > > If you don't have the Terminal app you can install it from the Microsoft Windows Store.
 
-2. Visit [Scoop.sh](https://scoop.sh). Copy the Given commands show right below QuickStart. Same commands are pasted below for reference.
+2. Check if you have `g++` installed by typing in `g++ --version`. If it returns a version you are all set and can move on to the VS Code setup.
+
+3. If not, no worries. Visit [Scoop.sh](https://scoop.sh). Copy the Given commands show right below QuickStart. Same commands are pasted below for reference.
 
 ```bash
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
@@ -24,7 +26,7 @@ Copy the commands given above and paste them in your Terminal.
 
 Close and reopen your Terminal.
 
-3. On [Scoop.sh](https://scoop.sh) Search for Mingw. Find the one labelled as *mingw in main*. Futher paste the given command in your Terminal.
+4. On [Scoop.sh](https://scoop.sh) Search for Mingw. Find the one labelled as *mingw in main*. Futher paste the given command in your Terminal.
 
 ```bash
 scoop install main/Mingw
@@ -32,7 +34,23 @@ scoop install main/Mingw
 
 >> If you get an error saying "scoop is not a valid command". Try closing and reopening your Terminal.
 
-4. Close you Terminal and reopen it. Type in `g++` and voila! You have the mingw compiler installed and running.
+5. Close you Terminal and reopen it. Type in `g++` and voila! You have the mingw compiler installed and running.
+
+## MacOS
+
+1. Open Terminal in MacOS. Check if you have `g++` installed by typing in `g++ --version`. If it returns a version you are all set and can move on to the VS Code setup.
+
+2. If not, no worries. Check if you have `brew` installed by typing in `brew --version`. If you have brew Installed you can skip to step 6.
+
+3. If not, Head on to [Brew.sh](https://brew.sh) and copy the given command and paste it into your terminal.
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+4. Once you have brew installed, type in `brew install gcc` in your terminal.
+
+5. Once the installation is complete, type in `g++ --version` to check if the installation was successful. If you see a version you are all set.
 
 ## VS Code
 
